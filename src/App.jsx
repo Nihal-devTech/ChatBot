@@ -2,8 +2,15 @@ import { useEffect, useRef, useState } from "react";
 import ChatbotIcon from "./components/chatbotIcon";
 import ChatForm from "./components/ChatForm";
 import ChatMessage from "./components/ChatMessage";
+import { MindfulInfo } from "./components/MindfulInfo";
 const App = () => {
-  const [chatHistory, setChatHistory] = useState([]);
+  const [chatHistory, setChatHistory] = useState([
+    {
+      hideInChat: true,
+      role: "model",
+      text: MindfulInfo,
+    },
+  ]);
   const chatBodyRef = useRef(null);
 
   const updateChatHistory = (text) => {
